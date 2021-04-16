@@ -11,5 +11,9 @@ const fetch = (mockData, time = 0) => {
 export default {
   fetchPosts () {
     return fetch(posts, 1000) // wait 1s before returning posts
+  },
+  async createPost(post){
+    let posts = await fetch(posts,500);
+    return {...posts, post}
   }
 }

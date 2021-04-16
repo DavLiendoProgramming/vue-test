@@ -1,18 +1,23 @@
 <template>
   <div class="home">
     <span v-if="loading">Loading…</span>
-    <ul
-      v-else
-      class="posts"
-    >
-      <li
-        v-for="post in posts"
-        :key="post.title"
-        class="post-item"
-      >
-          <h1>{{ post.title }}</h1>
-      </li>
-    </ul>
+    <section  v-else class="w-full md:w-2/3 flex flex-col items-center justify-center px-3 mx-auto">
+        <ul
+            class="flex flex-col items-center justify-center"
+            >
+
+            //Gives you accessto the computed variable, iterates over it and renders it
+            <li
+                v-for="post in posts"
+                :key="post.title"
+                class="post-item shadow-md p-6 rounded-md my-3"
+            >
+                <h1 class="text-left text-2xl text-gray-800  py-3 font-bold">{{ post.title }}</h1>
+                <p class="text-justify py-1 text-gray-500">{{post.body}}</p>
+                <h3 class="text-gray-600 text-xs text-left mt-1">{{post.pubDate}}  </h3>
+            </li>
+        </ul>
+    </section>
   </div>
 </template>
 
@@ -35,7 +40,7 @@ export default {
     this.$store.dispatch('fetchPosts')
       .then(posts => {
         this.loading = false;
-        this.posts = posts;
+        console.log(posts)
       })
   }
 }

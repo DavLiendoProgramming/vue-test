@@ -1,4 +1,6 @@
-# dav-test-front
+# Vue-Blog
+
+Blog bluilt in Vue for a front end test
 
 ## Project setup
 ```
@@ -14,11 +16,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
